@@ -26,19 +26,18 @@ class AddGifteeViewController: UIViewController {
         self.navigationItem.rightBarButtonItem = rightButtonItem
     }
 
-        //Save to core data
-        func rightButtonAction(_ sender: UIBarButtonItem) {
-        
-        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        
+    //Save to core data
+    func rightButtonAction(_ sender: UIBarButtonItem) {
+    
+        let appDelegate:AppDelegate = (UIApplication.shared.delegate as! AppDelegate)
+        let context = appDelegate.persistentContainer.viewContext
         let person = Person(context: context)
-        
+    
         person.name = gifteeNameField.text!
-        
-        (UIApplication.shared.delegate as! AppDelegate).saveContext()
-        
+    
+        appDelegate.saveContext()
+    
         navigationController?.popViewController(animated: true)
-        
     }
     
 

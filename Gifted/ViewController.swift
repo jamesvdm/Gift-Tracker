@@ -17,12 +17,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         title = "Gifted"
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
-        
-        self.tableView.rowHeight = 100
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -100,7 +95,7 @@ extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let person = people[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "GifteeCell", for: indexPath)
         
         cell.textLabel?.text = person.value(forKeyPath: "name") as? String
         return cell
