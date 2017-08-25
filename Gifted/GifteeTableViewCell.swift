@@ -25,11 +25,13 @@ class GifteeTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func updateDate(date: Date) {
+    func updateDate(date: Date?) {
         let formattedDate = DateFormatter()
         formattedDate.dateFormat = "MM-yyyy"
+        if (date != nil) {
+            self.nextDate.text = formattedDate.string(from: date!)
+        }
         
-        self.nextDate.text = formattedDate.string(from: date)
     }
 
 }

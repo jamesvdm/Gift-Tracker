@@ -9,7 +9,9 @@
 import UIKit
 
 class AddGifteeViewController: UIViewController {
-
+    
+    private var newGiftee:Person? = nil
+    
     @IBOutlet weak var gifteeNameField: UITextField!
     
     override func viewDidLoad() {
@@ -24,21 +26,38 @@ class AddGifteeViewController: UIViewController {
         )
         
         self.navigationItem.rightBarButtonItem = rightButtonItem
+        
+        let appDelegate:AppDelegate = (UIApplication.shared.delegate as! AppDelegate)
+        let context = appDelegate.persistentContainer.viewContext
+        self.newGiftee = Person(context: context)
     }
 
     //Save to core data
     func rightButtonAction(_ sender: UIBarButtonItem) {
-    
+        
+        self.newGiftee!.name = gifteeNameField.text!
         let appDelegate:AppDelegate = (UIApplication.shared.delegate as! AppDelegate)
-        let context = appDelegate.persistentContainer.viewContext
-        let person = Person(context: context)
-    
-        person.name = gifteeNameField.text!
-    
+
         appDelegate.saveContext()
     
         navigationController?.popViewController(animated: true)
     }
     
+    @IBOutlet weak var dateTextField: UITextField!
+
+    @IBAction func textFieldEditing(_ sender: UITextField) {
+        let datePickerView:UIDatePicker = UIDatePicker()
+        datePickerView.maximumDate = Date()
+        datePickerView.datePickerMode = UIDatePickerMode.date
+        sender.inputView = datePickerView
+        datePickerView.addTarget(self, action: #selector(dateChangeHandler), for: UIControlEvents.valueChanged)
+    }
+    
+    func dateChangeHandler(sender:UIDatePicker) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd-MMMM-YYYY"
+        dateTextField.text = dateFormatter.string(from: sender.date)
+        self.newGiftee!.birthdate = sender.date as NSDate
+    }
 
 }

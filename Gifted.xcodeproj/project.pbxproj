@@ -63,12 +63,12 @@
 				1CB436E91F497BDE002B53CA /* AppDelegate.swift */,
 				1CB436EB1F497BDE002B53CA /* ViewController.swift */,
 				1C7126E11F4AE9CC008B73CF /* AddGifteeViewController.swift */,
+				6BB3E7271F50506500455358 /* GifteeTableViewCell.swift */,
 				1CB436F31F497BDE002B53CA /* Assets.xcassets */,
 				1CB436ED1F497BDE002B53CA /* Main.storyboard */,
 				1CB436F51F497BDE002B53CA /* LaunchScreen.storyboard */,
 				1CB436F81F497BDE002B53CA /* Info.plist */,
 				1CB436F01F497BDE002B53CA /* Gifted.xcdatamodeld */,
-				6BB3E7271F50506500455358 /* GifteeTableViewCell.swift */,
 			);
 			path = Gifted;
 			sourceTree = "<group>";

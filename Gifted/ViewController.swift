@@ -94,11 +94,11 @@ extension ViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let person = people[indexPath.row]
+        let person = people[indexPath.row] as! Person
         let cell = tableView.dequeueReusableCell(withIdentifier: "GifteeCell", for: indexPath) as! GifteeTableViewCell
         
-        cell.name?.text = person.value(forKey: "name") as? String
-        cell.updateDate(date: Date())
+        cell.name?.text = person.name
+        cell.updateDate(date: person.birthdate as Date?)
         
         return cell
     }
