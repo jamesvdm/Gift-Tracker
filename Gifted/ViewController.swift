@@ -56,7 +56,7 @@ class ViewController: UIViewController {
                 return
             }
             
-            let  managedContext = appDelegate.persistentContainer.viewContext
+            let managedContext = appDelegate.persistentContainer.viewContext
             
             managedContext.delete(people[indexPath.row])
             do {
@@ -95,9 +95,11 @@ extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let person = people[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: "GifteeCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "GifteeCell", for: indexPath) as! GifteeTableViewCell
         
-        cell.textLabel?.text = person.value(forKeyPath: "name") as? String
+        cell.name?.text = person.value(forKey: "name") as? String
+        cell.updateDate(date: Date())
+        
         return cell
     }
 }

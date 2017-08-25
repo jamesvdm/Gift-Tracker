@@ -14,6 +14,7 @@
 		1CB436F21F497BDE002B53CA /* Gifted.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1CB436F01F497BDE002B53CA /* Gifted.xcdatamodeld */; };
 		1CB436F41F497BDE002B53CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CB436F31F497BDE002B53CA /* Assets.xcassets */; };
 		1CB436F71F497BDE002B53CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CB436F51F497BDE002B53CA /* LaunchScreen.storyboard */; };
+		6BB3E7281F50506500455358 /* GifteeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB3E7271F50506500455358 /* GifteeTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		1CB436F31F497BDE002B53CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1CB436F61F497BDE002B53CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1CB436F81F497BDE002B53CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6BB3E7271F50506500455358 /* GifteeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GifteeTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				1CB436F51F497BDE002B53CA /* LaunchScreen.storyboard */,
 				1CB436F81F497BDE002B53CA /* Info.plist */,
 				1CB436F01F497BDE002B53CA /* Gifted.xcdatamodeld */,
+				6BB3E7271F50506500455358 /* GifteeTableViewCell.swift */,
 			);
 			path = Gifted;
 			sourceTree = "<group>";
@@ -145,6 +148,7 @@
 			files = (
 				1C7126E21F4AE9CC008B73CF /* AddGifteeViewController.swift in Sources */,
 				1CB436EC1F497BDE002B53CA /* ViewController.swift in Sources */,
+				6BB3E7281F50506500455358 /* GifteeTableViewCell.swift in Sources */,
 				1CB436F21F497BDE002B53CA /* Gifted.xcdatamodeld in Sources */,
 				1CB436EA1F497BDE002B53CA /* AppDelegate.swift in Sources */,
 			);
