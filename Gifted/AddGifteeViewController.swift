@@ -13,6 +13,7 @@ class AddGifteeViewController: UIViewController {
     private var newGiftee:Person? = nil
     
     @IBOutlet weak var gifteeNameField: UITextField!
+    @IBOutlet weak var birthdayInput: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,7 +51,29 @@ class AddGifteeViewController: UIViewController {
         datePickerView.maximumDate = Date()
         datePickerView.datePickerMode = UIDatePickerMode.date
         sender.inputView = datePickerView
+        
+        let toolbar = UIToolbar()
+        toolbar.barStyle = .default
+        toolbar.isTranslucent = true
+        toolbar.sizeToFit()
+        
+        let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelButtonTapped))
+        let doneButton = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(doneButtonTapped))
+        let spacer = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        toolbar.setItems([cancelButton, spacer, doneButton], animated: false)
+        toolbar.isUserInteractionEnabled = true
+        sender.inputAccessoryView = toolbar;
+        
         datePickerView.addTarget(self, action: #selector(dateChangeHandler), for: UIControlEvents.valueChanged)
+    }
+    
+    func cancelButtonTapped() {
+        birthdayInput.resignFirstResponder()
+    }
+    
+    func doneButtonTapped(sender: UIBarButtonItem) {
+        birthdayInput.resignFirstResponder()
+        dateChangeHandler(sender: (birthdayInput.inputView as! UIDatePicker))
     }
     
     func dateChangeHandler(sender:UIDatePicker) {

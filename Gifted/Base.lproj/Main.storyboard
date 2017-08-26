@@ -117,6 +117,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="birthdayInput" destination="shh-IU-T5M" id="i0c-Ac-2FN"/>
                         <outlet property="dateTextField" destination="shh-IU-T5M" id="Tcw-GH-f4P"/>
                         <outlet property="gifteeNameField" destination="TdH-1M-NJd" id="DIO-LS-1jm"/>
                     </connections>
