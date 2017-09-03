@@ -14,6 +14,10 @@ class AddGifteeViewController: UIViewController {
     
     @IBOutlet weak var gifteeNameField: UITextField!
     @IBOutlet weak var birthdayInput: UITextField!
+    @IBAction func addTouchUpInside(_ sender: Any) {
+        let eventInputView = EventInputView(frame: CGRect(x: 0, y: 100, width: view.bounds.width, height: 100))
+        view.addSubview(eventInputView)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

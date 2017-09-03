@@ -113,6 +113,14 @@
                                     <action selector="textFieldEditing:" destination="9p7-hX-VOS" eventType="editingDidBegin" id="gVu-ZJ-eXT"/>
                                 </connections>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WTx-ik-bgA">
+                                <rect key="frame" x="305" y="394" width="54" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Add"/>
+                                <connections>
+                                    <action selector="addTouchUpInside:" destination="9p7-hX-VOS" eventType="touchUpInside" id="lo2-t2-j9I"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
