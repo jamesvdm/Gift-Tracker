@@ -34,7 +34,7 @@ class AddGifteeViewController: UIViewController {
     }
 
     //Save to core data
-    func rightButtonAction(_ sender: UIBarButtonItem) {
+    @objc func rightButtonAction(_ sender: UIBarButtonItem) {
         
         self.newGiftee!.name = gifteeNameField.text!
         let appDelegate:AppDelegate = (UIApplication.shared.delegate as! AppDelegate)
@@ -67,16 +67,16 @@ class AddGifteeViewController: UIViewController {
         datePickerView.addTarget(self, action: #selector(dateChangeHandler), for: UIControlEvents.valueChanged)
     }
     
-    func cancelButtonTapped() {
+    @objc func cancelButtonTapped() {
         birthdayInput.resignFirstResponder()
     }
     
-    func doneButtonTapped(sender: UIBarButtonItem) {
+    @objc func doneButtonTapped(sender: UIBarButtonItem) {
         birthdayInput.resignFirstResponder()
         dateChangeHandler(sender: (birthdayInput.inputView as! UIDatePicker))
     }
     
-    func dateChangeHandler(sender:UIDatePicker) {
+    @objc func dateChangeHandler(sender:UIDatePicker) {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd-MMMM-YYYY"
         dateTextField.text = dateFormatter.string(from: sender.date)
